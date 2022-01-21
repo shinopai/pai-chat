@@ -16,6 +16,7 @@ test:
 
 production:
   <<: *default
-  database: pai_chat_production
-  username: pai_chat
-  password: <%= ENV['PAI_CHAT_DATABASE_PASSWORD'] %>
+  username: <%= ENV['PAI_CHAT_USERNAME'] %>
+  password: <%= ENV['PAI_CHAT_PASSWORD'] %>
+  host: <%= ENV['PAI_CHAT_HOST'] %>
+  database: <%= ENV['PAI_CHAT_DATABASE'] %>
