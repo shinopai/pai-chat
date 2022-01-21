@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: 'は必須です'
+              too_long: 'は30字以内で入力してください'
+            email:
+              blank: 'は必須です'
+              invalid: 'の形式が正しくありません'
+            password:
+              blank: 'は必須です'
+              too_short: 'が短すぎです'
+            password_confirmation:
+              confirmation: 'が間違っています'
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード

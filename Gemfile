@@ -54,3 +54,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# auth user management
+gem 'devise'
+
+# manage database data on web
+gem 'activeadmin'
+
+# create dammy data
+gem 'faker'
+
+# save image
+gem 'carrierwave'
+
+# japanization devise
+gem 'devise-i18n'

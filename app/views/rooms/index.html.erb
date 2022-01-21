@@ -1,0 +1,19 @@
+<header class="bg-white">
+  <div class="container mx-auto px-4 py-8 flex items-center">
+    <div class="mr-auto flex-shrink-0">
+      <h1 class="text-lg">こんにちは、<%= current_user.name %>さん</h1>
+      <p class="text-sm text-gray-500">現在、<%= current_user.email %>でログイン中です</p>
+    </div>
+
+    <div class="ml-4 hidden sm:flex flex font-bold">
+      <%= link_to 'ルーム一覧', show_all_rooms_user_rooms_path(current_user), class: 'bg-indigo-500 text-white p-2 rounded-xl cursor-pointer ml-2' %>
+      <%= link_to 'マイルーム', show_room_path(@room_id), class: 'bg-green-500 text-white p-2 rounded-xl cursor-pointer ml-2' %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'bg-gray-500 text-white p-2 rounded-xl cursor-pointer ml-2' %>
+    </div>
+  </div>
+  <hr>
+</header>
+
+<main>
+  <div id="pai-chat"></div>
+</main>

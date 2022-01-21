@@ -1,0 +1,28 @@
+<section class="flex justify-center items-center bg-green-300 h-screen">
+  <div class="max-w-md w-full rounded p-6 space-y-4 bg-white">
+    <div class="mb-4">
+      <p class="text-gray-500">ログイン</p>
+      <h2 class="text-xl font-bold">チャットで会話を楽しみましょう</h2>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |user| %>
+    <div>
+      <%= user.email_field :email, class: 'w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600', placeholder: 'メールアドレス' %>
+    </div>
+    <div class="mt-3">
+      <%= user.password_field :password, class: 'w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600', placeholder: 'パスワード' %>
+    </div>
+    <div class="mt-3">
+      <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= user.check_box :remember_me %>
+        <%= user.label :remember_me, 'ログイン状態を保存する' %>
+      </div>
+      <% end %>
+    </div>
+    <div class="mt-3">
+      <%= user.submit 'ログイン', class: 'w-full py-4 bg-blue-600 hover:bg-blue-700 rounded text-sm font-bold text-gray-50 transition duration-200 cursor-pointer' %>
+    </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

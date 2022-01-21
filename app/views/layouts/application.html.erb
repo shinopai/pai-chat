@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PaiChat</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>PaiChat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <% if flash[:notice] %>
+  <p class="notice bg-green-300 p-2 text-center font-bold text-white"><%= notice %></p>
+  <% end %>
+  <% if flash[:alert] %>
+  <p class="alert bg-red-300 p-2 text-center font-bold text-white"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+
+  <%= javascript_pack_tag 'index', 'data-turbolinks-track': 'reload' %>
+</body>
+
 </html>
