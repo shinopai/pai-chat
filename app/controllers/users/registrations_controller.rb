@@ -11,11 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    user_id =  User.find_by(email: params[:user][:email]).id
+    res =  User.find_by(email: params[:user][:email])
 
-    if Room::find_by(user_id: user_id).nil?
+    if res.nil?
       Room.create(
-        user_id: user_id
+        user_id: params[:user][:id]
       )
     end
     super
