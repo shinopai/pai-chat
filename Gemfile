@@ -69,3 +69,9 @@ gem 'carrierwave'
 
 # japanization devise
 gem 'devise-i18n'
+
+# use outside storage to save image
+gem 'fog-aws'
+
+# management env value
+gem 'dotenv-rails'
